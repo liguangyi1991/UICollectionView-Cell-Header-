@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YTTestCollectionViewCell" id="gTV-IL-0wX" customClass="YTTestCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="474" height="72"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="474" height="72"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gma-XV-lIf">
+                        <rect key="frame" x="0.0" y="0.0" width="474" height="72"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywW-mS-pHG">
+                                <rect key="frame" x="0.0" y="0.0" width="474" height="72"/>
+                                <mutableString key="text">研究了下UICollectionViewCell在自适应高度方面的资料，发现大部分都是得去重写preferredLayoutAttributesFitting方法，给我的感觉不是很符合像UITableViewCell自适应高度的那种思维，后来又了解了UIScrollView里面放着多个Label用AutoLayout去约束时候，要使用一个UIView去作为容器，所以，我在自定义UICollectionViewCell里面放多一个UIView，作为容器，代码的风格就显得比较符合UITableViewCell自适应高度的思维
+
+作者：Grabin
+链接：https://www.jianshu.com/p/4186ed80cbac
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ywW-mS-pHG" secondAttribute="trailing" id="5Vs-4O-CsC"/>
+                            <constraint firstAttribute="bottom" secondItem="ywW-mS-pHG" secondAttribute="bottom" id="9Yd-pD-hWD"/>
+                            <constraint firstItem="ywW-mS-pHG" firstAttribute="top" secondItem="gma-XV-lIf" secondAttribute="top" id="VxK-l1-IoL"/>
+                            <constraint firstItem="ywW-mS-pHG" firstAttribute="leading" secondItem="gma-XV-lIf" secondAttribute="leading" id="tIU-mG-5MU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <constraints>
+                <constraint firstItem="gma-XV-lIf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="htY-4x-0rQ"/>
+                <constraint firstAttribute="trailing" secondItem="gma-XV-lIf" secondAttribute="trailing" id="jPu-zG-dqx"/>
+                <constraint firstItem="gma-XV-lIf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="m0T-0u-Apg"/>
+                <constraint firstAttribute="bottom" secondItem="gma-XV-lIf" secondAttribute="bottom" id="rXv-Jy-Fsc"/>
+            </constraints>
+            <size key="customSize" width="474" height="72"/>
+            <connections>
+                <outlet property="containerView" destination="gma-XV-lIf" id="cGy-MX-ez0"/>
+            </connections>
+            <point key="canvasLocation" x="389.3129770992366" y="26.760563380281692"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
